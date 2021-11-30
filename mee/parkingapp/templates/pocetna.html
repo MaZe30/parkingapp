@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        
+        <link rel="stylesheet" href="{% static 'pocetna.css' %}">
+</head>
+
+<body>
+<div class="header">
+    <a href="#default" > ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+    <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+    
+    
+    
+   
+    <div class="header-right">
+      
+      <a href="{% url 'Reg' %}" type="submit" name="reg" id="reg" value="Registruj se">Registruj se</a>
+    </div>
+          
+        
+</div>
+      <br>
+      <div class="glavna">    
+        <form action="{% url 'loginpage' %}" id="login" method="POST">
+          {% csrf_token %}
+          
+          <label>Molimo vas da se prijavite ili registrujete</label>
+          <br>
+          <br>
+
+          <input type="text" placeholder="Unesite email" name="Email1" required>
+          <br>
+          <input type="password" placeholder="Unesite šifru" name="Pwd1" required>
+            
+               
+                
+               
+            
+             
+          <br>
+    
+          {% if messages %}
+          {% for msg in messages %}
+          <br>
+          <mark>{{msg}}</mark>
+          {% endfor %}
+          {% endif %}
+          </br>
+          <button href="{% url 'loginpage' %}"  type="submit" id="Pri" name="Pri">Prijavi se</button>
+          <br>
+
+        
+          
+          
+      
+          
+          
+          
+          
+
+            
+            
+            
+            
+               
+               
+                
+        </form>
+      </div>
+      
+      
+    
+</body>

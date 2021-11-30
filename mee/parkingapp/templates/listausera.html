@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'listausera.css'%}">
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+            <a class="active" href="{% url 'pocetna1' %}" type="submit" name="back"  >Početna</a>
+            
+            
+            
+            <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+            <p name="jo">Admin</p>
+        
+    </div>
+</div>
+    </div>
+    <br>
+    <div class="glavna">
+    
+    <table id="customers">
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Pwd</th>
+            <th>Age</th>
+
+        </tr>
+        {% for getdata in Newuser %}
+        <tr>
+            <td>{{getdata.id}}</td>
+            <td>{{getdata.Username}}</td>
+            <td>{{getdata.Email}}</td>
+            <td>{{getdata.Pwd}}</td>
+            <td>{{getdata.Age}}</td>
+        </tr>
+        {% endfor %}
+    
+    </table>
+    <br>
+    
+    <form action="{% url 'delete' %}"  method="POST">
+        {% csrf_token %}
+        <label>Unesite email korisnika koji želite da obrišete</label>
+        <br>
+        <br>
+
+        <input type="text" placeholder="Unesite email" name="Email12" required>
+        <br>
+        <br>
+        
+          
+             
+              
+             
+          
+           
+        
+        
+        <button href="{ url 'delete' %}"  type="submit" id="Pri" name="Pri">obriši</button>
+
+        <br>
+    
+          {% if messages %}
+          {% for msg in messages %}
+          <br>
+          <mark>{{msg}}</mark>
+          {% endfor %}
+          {% endif %}
+    </form>
+    </div>
+    
+
+
+    
+</body>

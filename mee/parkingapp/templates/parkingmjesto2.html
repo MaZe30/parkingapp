@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'parkingmjesto.css'%}">
+</head>
+
+
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+        <a class="active" href="{% url 'pocetna' %}" type="submit" name="back"  >Početna</a>
+        
+        <a class="back" href="{% url 'broj' %}" type="submit" name="back"  >Broj parking mjesta</a>
+        
+        <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+        <p name="jo">Korisnik:{{username}}</p>
+        </div>
+        
+        
+</div>
+    <br>
+
+    
+    <div class="glavna">
+        <form method="POST" action="{% url 'me1' %}">
+        
+            {% csrf_token %}
+        <label class="zona11">Izaberite parkiralište za ZONU 2:</label>
+        <br>
+        <select name="zona2" id="zona2">
+            <option name="Augusta">	Augusta</option>
+            <option name="Autobuska">Autobuska_stanica_Pošta</option>
+            <option name="Dolac">Dolac_Malta_Pošta</option>
+            <option name="Dolina">Dolina </option>
+            <option name="Džemala">Džemala_Bijedića	</option>
+            <option name="Franca">Franca_Lehara</option>
+            <option name="Franje">Franje_Račkog</option>
+            <option name="Hazima">Hazima_Šabanovića	</option>
+            <option name="Herceg">Herceg_Stjepana</option>
+            <option name="Koste">Koste_Hermana</option>
+            
+        </select>
+        <br>
+        <input type="text" name="tablica" placeholder="tablica" required>
+        <br>
+        <input type="number" name="Satnica" placeholder="Satnica" id="satnica" required>  
+        <br>
+          
+        <button id="Pri" href="{% url 'me1' %}" type="submit">Dalje</button>
+        </form>
+        
+
+    </div>
+
+
+
+    
+</body>

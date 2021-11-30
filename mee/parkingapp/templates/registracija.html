@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'registracija.css'%}">
+
+<body>
+  <div class="header">
+    <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+    
+    <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+    <div class="header-right">
+      <a class="active" href="{% url 'back' %}" type="submit" name="back"  >Prijavi se</a>
+    
+    
+    
+    
+    </div>
+    
+    
+</div>
+        
+        
+          
+        
+      </div>
+      <br>
+      <div class="glavna">    
+        <form id="register" method="POST" >
+
+          {% csrf_token %}
+
+            <input type="text" placeholder="Unesite ime" name="Username" required>
+            <br>
+            <input type="text" placeholder="Unesite email" name="Email" required>
+            <br>
+            <input type="password" placeholder="Unesite sifru" name="Pwd" required>
+            <br>
+            
+            <input type="number" placeholder="Unesite vase godine" name="Age" required>
+            
+                
+               
+            
+             
+            <br>
+    
+          {% if messages %}
+          {% for msg in messages %}
+          <br>
+          <mark>{{msg}}</mark>
+          {% endfor %}
+          {% endif %}
+            </br>
+            <button type="submit" id="Pri" name="Pri">Registruj se </button>
+            <br>
+            <br>
+            
+
+               
+               
+                
+        </form>
+      </div>
+</body>

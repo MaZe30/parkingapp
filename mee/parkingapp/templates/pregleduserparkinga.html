@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'pregleduserparkinga.css'%}">
+</head>
+
+
+<body>
+    <div class="header">
+        <a href="#default" > ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+        <a class="active" href="{% url 'pocetna' %}" type="submit" name="back"  >Početna</a>
+        
+        <a class="back" href="{% url 'broj' %}" type="submit" name="back"  >Broj parking mjesta</a>
+        
+        <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+        <p name="jo">Korisnik:{{username}}</p>
+        </div>
+        
+        
+</div>
+    <br>
+    <div class="glavna">
+    
+
+<p>Pregled prema sms plačanju:</p>
+<table id="customers">
+    <tr>
+        <th>Id</th>
+        <th>BrojTelefona</th>
+        
+        <th>Username</th>
+        <th>Datum</th>
+        <th>Vrijeme</th>
+        
+        
+
+    </tr>
+    {% for getdata in Parkingmjesto1 %}
+    <tr>
+        <td>{{getdata.id}}</td>
+        <td>{{getdata.BrojTelefona}}</td>
+        
+        <td>{{getdata.Username}}</td>
+        <td>{{getdata.Datum}}</td>
+        <td>{{getdata.Vrijeme}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+<p>Pregled prema parking mjestu:</p>
+    <table id="customers">
+        <tr>
+            <th>Id</th>
+            <th>Parking Mjesto</th>
+            <th>Username</th>
+            <th>Registracija</th>
+            <th>Datum</th>
+            <th>Vrijeme</th>
+            
+            
+
+        </tr>
+        {% for getdata in Parkingmjesto %}
+        <tr>
+            <td>{{getdata.id}}</td>
+            <td>{{getdata.ParkingMjesto}}</td>
+            <td>{{getdata.Username}}</td>
+            <td>{{getdata.Registracija}}</td>
+            <td>{{getdata.Datum}}</td>
+            <td>{{getdata.Vrijeme}}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+<p>Pregled prema kartičnom plačanju:</p>
+<table id="customers">
+    <tr>
+        <th>Id</th>
+        <th>Ime</th>
+        
+        <th>Broj Kartice</th>
+        <th>Username</th>
+        <th>Datum</th>
+        <th>Vrijeme</th>
+        
+        
+
+    </tr>
+    {% for getdata in Parkingmjesto2 %}
+    <tr>
+        <td>{{getdata.id}}</td>
+        <td>{{getdata.Ime}}</td>
+        
+        <td>{{getdata.BrojKartice}}</td>
+        <td>{{getdata.Username}}</td>
+        <td>{{getdata.Datum}}</td>
+        <td>{{getdata.Vrijeme}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+<p>Pregled rezervacija:</p>
+<table id="customers">
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        
+        <th>Datum</th>
+        <th>Satnica</th>
+        <th>Kod</th>
+        
+        
+        
+
+    </tr>
+    {% for getdata in rezervacija %}
+    <tr>
+        <td>{{getdata.id}}</td>
+        <td>{{getdata.Username}}</td>
+        
+        <td>{{getdata.Datum}}</td>
+        <td>{{getdata.Satnica}}</td>
+        <td>{{getdata.Kod}}</td>
+        
+        
+    </tr>
+    {% endfor %}
+</table>
+</div>
+</body>

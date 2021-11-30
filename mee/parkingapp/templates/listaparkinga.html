@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'listaparkinga.css'%}">
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+            <a class="active" href="{% url 'pocetna1' %}" type="submit" name="back"  >Početna</a>
+            
+            
+            
+            <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+            <p name="jo">Admin</p>
+        
+    </div>
+</div>
+    </div>
+    <br>
+    <div class="glavna">
+    <br>
+    <label>Zona 1:</label>
+    <p class="parking">Alipašina: {{ppp}} </p>
+    <p class="parking">Brodac: {{p2}}</p>
+    <p class="parking">Branilaca_Sarajeva: {{p3}}</p>
+    <p class="parking">Musala:{{Musala}}</p>
+    <p class="parking">Buka: {{p5}}</p>
+    <p class="parking">Ćemaluša: {{p6}}</p>
+    <p class="parking">Danijela_Ozme: {{p7}}</p>
+    <p class="parking">Despićeva: {{p8}}</p>
+    <p class="parking">Dženetića_čikma: {{p9}}</p>
+    <p class="parking">Džidžikovac: {{p10}}</p>
+    <br>
+    <br>
+    <label>Zona 2:</label>
+    <p class="parking">Augusta: {{p11}} </p>
+    <p class="parking">Autobuska_stanica_Pošta: {{p12}}</p>
+    <p class="parking">Dolac_Malta_Pošta: {{p13}}</p>
+    <p class="parking">Dolina: {{p14}}</p>
+    <p class="parking">Džemala_Bijedića: {{p15}}</p>
+    <p class="parking">Franca_Lehara: {{p16}}</p>
+    <p class="parking">Franje_Račkog: {{p17}}</p>
+    <p class="parking">Hazima_Šabanovića: {{p18}}</p>
+    <p class="parking">Herceg_Stjepana: {{p19}}</p>
+    <p class="parking">Koste_Hermana: {{p20}}</p>
+</div>
+    
+
+
+
+    
+</body>

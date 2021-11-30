@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'pregledpodatumu.css'%}">
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+            <a class="active" href="{% url 'pocetna1' %}" type="submit" name="back"  >Početna</a>
+            
+            
+            
+            <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+            <p name="jo">Admin</p>
+        
+    </div>
+</div>
+    </div>
+    <br>
+    <div class="glavna">
+    
+        <table id="customers">
+            <tr>
+                <th>Id</th>
+                <th>ParkingMjesto</th>
+                <th>Username</th>
+                <th>Registracija</th>
+                <th>Datum</th>
+                <th>Vrijeme</th>
+                <th>Satnica</th>
+    
+            </tr>
+            {% for getdata in datum %}
+            <tr>
+                <td>{{getdata.id}}</td>
+                <td>{{getdata.ParkingMjesto}}</td>
+                <td>{{getdata.Username}}</td>
+                <td>{{getdata.Registracija}}</td>
+                <td>{{getdata.Datum}}</td>
+                <td>{{getdata.Vrijeme}}</td>
+                <td>{{getdata.Satnica}}</td>
+            </tr>
+            {% endfor %}
+        
+        </table>
+        
+        
+            
+           
+    
+            
+        </form>
+        </div>
+          
+             

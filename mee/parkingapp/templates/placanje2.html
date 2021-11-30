@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'placanje.css'%}">
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+        <a class="active" href="{% url 'pocetna' %}" type="submit" name="back"  >Početna</a>
+        
+        <a class="back" href="{% url 'broj' %}" type="submit" name="back"  >Broj parking mjesta</a>
+        
+        <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+        <p name="jo">Korisnik:{{username}}</p>
+        </div>
+        
+        
+</div>
+    <br>
+    <div class="glavna">
+        <label class="zona11">ZA PLAČANJE PUTEM KARTICE UNESITE IME I PREZIME,BROJ KARTICE I SATNICU:</label>
+        <br>
+        <form   id="placanje" action="{% url 'kartica' %}" method="POST" >  
+            {% csrf_token %}  
+                
+            </b>    
+            </label>    
+            <input type="text" placeholder="Ime i Prezime" name="Ime" id="ime" required>    
+               
+                
+            </b>
+            <br>    
+            </label>    
+              
+            
+              
+            </b>
+            <br>
+            </label>
+            <input type="number" placeholder="Broj Kartice" name="BrojKartice" id="kartica">
+            <br><br>
+            <br>
+    
+            {% if messages %}
+            {% for msg in messages %}
+            <br>
+            <mark>{{msg}}</mark>
+            {% endfor %}
+            {% endif %}
+          <button id="Pri" href="{% url 'kartica' %}"type="submit">Dalje</button>
+        
+
+    </div>
+
+
+    
+</body>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'parkingmjesto.css'%}">
+</head>
+
+
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+        <a class="active" href="{% url 'pocetna' %}" type="submit" name="back"  >Početna</a>
+        
+        <a class="back" href="{% url 'broj' %}" type="submit" name="back"  >Broj parking mjesta</a>
+        
+        <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+        <p name="jo">Korisnik:{{username}}</p>
+        </div>
+        
+        
+</div>
+    <br>
+
+    <div class="glavna">
+        <form method="POST" action="{% url 'me' %}">
+            {% csrf_token %}
+        <label class="zona11">Izaberite parkiralište za ZONU 1</label>
+        <br>
+        <select name="zona1" id="zona1">
+            <option name="Alipašina">	Alipašina		</option>
+            <option name="Musula">	Musala	</option>
+            <option name="Branilaca">	Branilaca_Sarajeva	</option>
+            <option name="Brodac">	Brodac		</option>
+            <option name="Buka">	Buka		</option>
+            <option name="Ćemaluša">	Ćemaluša	</option>
+            <option name="Danijela">	Danijela_Ozme	</option>
+            <option name="Despićeva">	Despićeva		</option>
+            <option name="Dženetića">	Dženetića_čikma		</option>
+            <option name="Džidžikovac">	Džidžikovac		</option>
+            
+        </select>
+        <br>
+        <input type="text" name="tablica" placeholder="Broj reg. tablice" required>
+        <br>
+        
+        <input type="number" name="Satnica" placeholder="Satnica" id="satnica" required>  
+        <br>
+        <br>
+        
+        <button id="Pri" type="submit">Dalje</button>
+    
+    </div>
+    
+
+
+
+    
+</body>
