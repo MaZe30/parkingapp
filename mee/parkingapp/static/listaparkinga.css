@@ -68,7 +68,7 @@ body {
     float: none;
   }
   .glavna{
-    overflow: hidden;  
+  overflow: visible;  
   margin: auto;  
     
   padding: 80px;  
@@ -150,4 +150,34 @@ p{
 
 label{
   color: aliceblue;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid rgb(68, 25, 168);
+  padding: 8px;
+}
+
+#customers tr{background-color: rgb(182, 166, 24);
+color: black;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2427d1;
+  color: rgb(255, 255, 255);
+}
+td{
+  color: black;
+}
+b{
+  font-size: 20px;
+  color: white;
 }

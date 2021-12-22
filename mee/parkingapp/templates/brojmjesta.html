@@ -20,33 +20,26 @@
     </div>
         
 </div>
-    <br>
-    <div class="glavna">
-    <br>
-    <label>Zona 1:</label>
-    <p class="parking">Alipašina: {{ppp}} </p>
-    <p class="parking">Brodac: {{p2}}</p>
-    <p class="parking">Branilaca_Sarajeva: {{p3}}</p>
-    <p class="parking">Musala:{{Musala}}</p>
-    <p class="parking">Buka: {{p5}}</p>
-    <p class="parking">Ćemaluša: {{p6}}</p>
-    <p class="parking">Danijela_Ozme: {{p7}}</p>
-    <p class="parking">Despićeva: {{p8}}</p>
-    <p class="parking">Dženetića_čikma: {{p9}}</p>
-    <p class="parking">Džidžikovac: {{p10}}</p>
-    <br>
-    <br>
-    <label>Zona 2:</label>
-    <p class="parking">Augusta: {{p11}} </p>
-    <p class="parking">Autobuska_stanica_Pošta: {{p12}}</p>
-    <p class="parking">Dolac_Malta_Pošta: {{p13}}</p>
-    <p class="parking">Dolina: {{p14}}</p>
-    <p class="parking">Džemala_Bijedića: {{p15}}</p>
-    <p class="parking">Franca_Lehara: {{p16}}</p>
-    <p class="parking">Franje_Račkog: {{p17}}</p>
-    <p class="parking">Hazima_Šabanovića: {{p18}}</p>
-    <p class="parking">Herceg_Stjepana: {{p19}}</p>
-    <p class="parking">Koste_Hermana: {{p20}}</p>
+<br>
+<br>
+<div class="glavna">
+<table id="customers">
+    <tr>
+        
+        <th>Naziv Parking Mjesta</th>
+        <th>Broj Slobodnih Mjesta</th>
+        
+
+    </tr>
+    {% for results in lista %}
+    <tr>
+        <td>{{results.NazivMjesta}}</td>
+        <td>{{results.BrojMjesta}}</td>
+        
+    </tr>
+    {% endfor %}
+
+</table>
 </div>
     
 

@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load static %}
-        <link rel="stylesheet" href="{% static 'pregledpodatumu.css'%}">
+        <link rel="stylesheet" href="{% static 'admin.css'%}">
 </head>
 <body>
-    <div class="header">
+<div class="header">
         <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
         
         <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
@@ -21,34 +21,35 @@
         
     </div>
 </div>
-    </div>
     <br>
     <div class="glavna">
-    
-    
-    </table>
-    
-    <form action="{% url 'datum1' %}"  method="POST">
-        {% csrf_token %}
-        <label>Unesite datum:</label>
+        <form method="POST" >
+            {% csrf_token %}
+        <label class="zona111">Dobrodošli admine izaberite opciju:</label>
         <br>
-
-        <input  placeholder="Unesite datum" name="datum" required>(Format MM/DD/GG)
         <br>
-    
-    <button href="{ url 'datum1' %}"  type="submit" id="Pri" name="Pri">Dalje</button>
-
-      <br>
-      {% if messages %}
-      {% for msg in messages %}
-      <br>
-      <mark>{{msg}}</mark>
-      {% endfor %}
-      {% endif %}
-
-  
-</form>
-</div>
         
-          
-             
+            
+            
+        
+        <a href="{% url 'dodaj1' %}">Dodaj parking mjesto</a>
+        <br>
+        <br>
+        <a href="{% url 'obrisi1'%}">Obriši parking mjesto</a>
+      
+        <br>
+        <br>
+        <a href="{% url 'uredi1'%}">Uredi parking mjesto</a>
+      
+        <br>
+        <br>
+        
+        
+        </form>
+    
+    
+    
+
+
+    
+</body>

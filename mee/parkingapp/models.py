@@ -22,6 +22,7 @@ class Parkingmjesto(models.Model):
     Datum=models.CharField(max_length=50)
     Vrijeme=models.CharField(max_length=50)
     Satnica=models.IntegerField()
+    KM=models.IntegerField()
 class PlacanjeSms(models.Model):
     BrojTelefona=models.CharField(max_length=50)
     
@@ -42,3 +43,14 @@ class Rezervacija(models.Model):
     Satnica=models.CharField(max_length=30)
     Kod=IntegerField()
     
+class Parking(models.Model):
+    NazivMjesta=models.CharField(max_length=20)
+    BrojMjesta=models.IntegerField()
+    class Meta:
+        db_table="parkingapp_parking"
+
+class Parking2(models.Model):
+    NazivMjesta=models.CharField(max_length=20)
+    BrojMjesta=models.IntegerField()
+    class Meta:
+        db_table="parkingapp_parking2"

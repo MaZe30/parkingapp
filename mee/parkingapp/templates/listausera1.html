@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load static %}
-        <link rel="stylesheet" href="{% static 'pregledpodatumu.css'%}">
+        <link rel="stylesheet" href="{% static 'listausera.css'%}">
 </head>
 <body>
     <div class="header">
@@ -25,30 +25,48 @@
     <br>
     <div class="glavna">
     
+    <table id="customers">
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Pwd</th>
+            <th>Age</th>
+
+        </tr>
+        {% for getdata in Newuser %}
+        <tr>
+            <td>{{getdata.id}}</td>
+            <td>{{getdata.Username}}</td>
+            <td>{{getdata.Email}}</td>
+            <td>{{getdata.Pwd}}</td>
+            <td>{{getdata.Age}}</td>
+        </tr>
+        {% endfor %}
     
     </table>
+    <br>
     
-    <form action="{% url 'datum1' %}"  method="POST">
-        {% csrf_token %}
-        <label>Unesite datum:</label>
-        <br>
-
-        <input  placeholder="Unesite datum" name="datum" required>(Format MM/DD/GG)
-        <br>
     
-    <button href="{ url 'datum1' %}"  type="submit" id="Pri" name="Pri">Dalje</button>
-
-      <br>
-      {% if messages %}
-      {% for msg in messages %}
-      <br>
-      <mark>{{msg}}</mark>
-      {% endfor %}
-      {% endif %}
-
-  
-</form>
-</div>
         
-          
-             
+        
+        <br>
+        <br>
+
+        
+
+        <br>
+    
+          {% if messages %}
+          {% for msg in messages %}
+          <br>
+          <mark>{{msg}}</mark>
+          {% endfor %}
+          {% endif %}
+    
+    </div>
+    
+
+
+    
+</body>

@@ -31,17 +31,11 @@
             {% csrf_token %}
         <label class="zona11">Izaberite parkiralište za ZONU 1</label>
         <br>
-        <select name="zona1" id="zona1">
-            <option name="Alipašina">	Alipašina		</option>
-            <option name="Musula">	Musala	</option>
-            <option name="Branilaca">	Branilaca_Sarajeva	</option>
-            <option name="Brodac">	Brodac		</option>
-            <option name="Buka">	Buka		</option>
-            <option name="Ćemaluša">	Ćemaluša	</option>
-            <option name="Danijela">	Danijela_Ozme	</option>
-            <option name="Despićeva">	Despićeva		</option>
-            <option name="Dženetića">	Dženetića_čikma		</option>
-            <option name="Džidžikovac">	Džidžikovac		</option>
+        <select name="zona1"  id="zona2">
+            <option  disabled="true" selected>Zona 1:</option>
+            {% for results in lista %}
+            <option >{{results.NazivMjesta}}</option>
+            {% endfor %}
             
         </select>
         <br>

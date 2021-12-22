@@ -53,7 +53,14 @@ urlpatterns = [
     path("kod1",views.kod1,name="kod"),
     path("broj",views.brojmjesta,name="broj"),
     path("datum",views.datum,name="datum"),
-    path("datum1",views.datum2,name="datum1")
+    path("datum1",views.datum2,name="datum1"),
+    path("manage",views.manage,name="manage"),
+    path("dodaj",views.dodaj,name="dodaj"),
+    path("dodaj1",views.dodaj1,name="dodaj1"),
+    path("obrisi1",views.obrisi1,name="obrisi1"),
+    path("obrisi",views.obrisi,name="obrisii"),
+    path("uredi1",views.uredi1,name="uredi1"),
+    path("uredi",views.uredi,name="uredi")
     
     
 

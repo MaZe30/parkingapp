@@ -34,16 +34,10 @@
         <label class="zona11">Izaberite parkiralište za ZONU 2:</label>
         <br>
         <select name="zona2" id="zona2">
-            <option name="Augusta">	Augusta</option>
-            <option name="Autobuska">Autobuska_stanica_Pošta</option>
-            <option name="Dolac">Dolac_Malta_Pošta</option>
-            <option name="Dolina">Dolina </option>
-            <option name="Džemala">Džemala_Bijedića	</option>
-            <option name="Franca">Franca_Lehara</option>
-            <option name="Franje">Franje_Račkog</option>
-            <option name="Hazima">Hazima_Šabanovića	</option>
-            <option name="Herceg">Herceg_Stjepana</option>
-            <option name="Koste">Koste_Hermana</option>
+            <option  disabled="true" selected>Zona 2:</option>
+            {% for results in lista %}
+            <option >{{results.NazivMjesta}}</option>
+            {% endfor %}
             
         </select>
         <br>

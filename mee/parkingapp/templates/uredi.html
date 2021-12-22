@@ -26,9 +26,8 @@
 <br>
 <div class="glavna">
     <br>
-    <b>UKUPNO UPLAČENO:{{ukupno}}</b>
-    <br>
-    <br>
+    
+    
     <b>ZONA 1:</b>
     <br>
     <br>
@@ -70,15 +69,51 @@
     {% endfor %}
 
 </table>
-<br>
-          {% if messages %}
-          {% for msg in messages %}
-          <br>
-          <mark>{{msg}}</mark>
-          {% endfor %}
-          {% endif %}
-</div>
+<form action="{% url 'uredi' %}"  method="POST">
+    {% csrf_token %}
+    <label>Unesite naziv parkingaa koji želite da obrišete</label>
+    <br>
+    <br>
+    <input type="text" placeholder="Unesi zonu parkinga" name="zona" required>
+    <br>
+    <br>
 
+    <input type="text" placeholder="Unesite naziv parkinga" name="naziv" required>
+    <br>
+    <br>
+    <label>Unesite novi naziv i broj parking mjesta</label>
+    <br>
+    <br>
+    <input type="text" placeholder="Unesi naziv parkinga" name="naziv1" required>
+    <br>
+    <br>
+
+    <input type="text" placeholder="Unesite naziv parkinga" name="broj" required>
+    <br>
+    <br>
+    
+    
+      
+         
+          
+         
+      
+       
+    
+    
+    <button href="{ url 'uredi' %}"  type="submit" id="Pri" name="Pri">Uredi</button>
+
+    <br>
+
+      {% if messages %}
+      {% for msg in messages %}
+      <br>
+      <mark>{{msg}}</mark>
+      {% endfor %}
+      {% endif %}
+</form>
+</div>
+<br>
     
 
 

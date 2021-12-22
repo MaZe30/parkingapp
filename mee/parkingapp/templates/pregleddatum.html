@@ -49,6 +49,15 @@
             {% endfor %}
         
         </table>
+        <br>
+        <br>
+        {% if messages %}
+        {% for msg in messages %}
+        <br>
+        <mark>{{msg}}</mark>
+        {% endfor %}
+        {% endif %}
+      
         
         
             

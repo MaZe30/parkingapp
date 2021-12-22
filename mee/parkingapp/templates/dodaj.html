@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'admin.css'%}">
+</head>
+<body>
+<div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+            <a class="active" href="{% url 'pocetna1' %}" type="submit" name="back"  >Početna</a>
+            
+            
+            
+            <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+            <p name="jo">Admin</p>
+        
+    </div>
+</div>
+    <br>
+    <div class="glavna">
+        <form action="{% url 'dodaj' %}" id="login" method="POST">
+            {% csrf_token %}
+            
+            <label>Molimo vas da ispunite podatke o parkingu</label>
+            <br>
+            <br>
+  
+            <input type="text" placeholder="Unesi naziv parkinga" name="naziv" required>
+            <br>
+            <input type="text" placeholder="Unesi zonu parkinga" name="zona" required>
+            <br>
+            <input type="number" placeholder="Unesi broj mjesta" name="broj" required>
+              
+                 
+                  
+                 
+              
+               
+            <br>
+      
+            {% if messages %}
+            {% for msg in messages %}
+            <br>
+            <mark>{{msg}}</mark>
+            {% endfor %}
+            {% endif %}
+            </br>
+            <button href="{% url 'dodaj' %}"  type="submit" id="Pri" name="Pri">Dodaj</button>
+            <br>
+    </div>
+        
+    
+    
+    
+
+
+    
+</body>
