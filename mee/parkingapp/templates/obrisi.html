@@ -18,64 +18,91 @@
             
             <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
             <p name="jo">Admin</p>
-    </div>
-        
-</div>
+        </div>
+</div>      
 
 <br>
 <br>
 <div class="glavna">
+    <p id="a1">Zona 1</p>
     <br>
     
     <br>
     <br>
-    <b>ZONA 1:</b>
-    <br>
-    <br>
-<table id="customers">
-    <tr>
+    
+    
+    <ul id="a1">
         
-        <th>Naziv Parking Mjesta</th>
-        <th>Broj Slobodnih Mjesta</th>
+    {% for l in lista%}
         
+        <li>{{l.NazivMjesta}}</li>
+        <br>
 
-    </tr>
-    {% for results in lista %}
-    <tr>
-        <td>{{results.NazivMjesta}}</td>
-        <td>{{results.BrojMjesta}}</td>
-        
-    </tr>
     {% endfor %}
+        
+    </ul>
+    
+    
 
-</table>
-<br>
-<b>ZONA 2:</b>
-<br>
-<br>
-<table id="customers">
-    <tr>
+    
+    
+    <ul id="a2">
+        {% for l in suma %}
         
-        <th>Naziv Parking Mjesta</th>
-        <th>Broj Slobodnih Mjesta</th>
+        <li>{{l}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    
+    
+</div>
+<br>
+<br>
+<div class="glavna">
+    <p id="a1">Zona 2</p>
+    <br>
+    
+    <br>
+    <br> 
+    
+    
+    <ul id="a1">
         
+    {% for l in lista1 %}
+        
+        <li>{{l.NazivMjesta}}</li>
+        <br>
 
-    </tr>
-    {% for results in lista1 %}
-    <tr>
-        <td>{{results.NazivMjesta}}</td>
-        <td>{{results.BrojMjesta}}</td>
-        
-    </tr>
     {% endfor %}
+        
+    </ul>
+    
+    
 
-</table>
+    
+    
+    <ul id="a2">
+        {% for l in suma1 %}
+        
+        <li>{{l}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    
+    
+</div>
+<br>
+<br>
+<div class="glavna">
 <form action="{% url 'obrisii' %}"  method="POST">
     {% csrf_token %}
     <label>Unesite naziv parkinga koji želite da obrišete</label>
     <br>
     <br>
-    <input type="text" placeholder="Unesi zonu parkinga" name="zona" required>
+    <select name="zona">
+        <option>zona1</option>
+        <option>zona2</option>
+    </select>
     <br>
     <br>
 

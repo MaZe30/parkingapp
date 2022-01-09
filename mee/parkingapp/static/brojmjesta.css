@@ -99,6 +99,7 @@ html {
   background:rgb(52, 75, 109, 0.8) ;  
   border-radius: 15px ; 
   z-index: 2;
+  display: flex;
   
 }
 
@@ -177,7 +178,7 @@ color: black;}
 td{
   color: black;
 }
-input {
+input,select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -186,4 +187,45 @@ input {
   background-color: #b4b224;
   color: white;
   font-size: 15px;
+}
+#a1{
+  float: left;
+  width: 70%;
+  
+}
+#a2{
+  float: right;
+  width: 30%;
+  padding-bottom: 150px;
+}
+li{
+ 
+  list-style-type: none;
+  font-size: 25px;
+  color: yellow;
+  list-style-type: none;
+}
+h1{
+  color: aliceblue;
+}
+.alert {
+  padding: 20px;
+  background-color:black;
+  color: white;
+  
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }

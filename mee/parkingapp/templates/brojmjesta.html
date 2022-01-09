@@ -17,29 +17,84 @@
         
         <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
         <p class="jo"> Korisnik:{{username}}</p>
+        <p>{{a}}</p>
+        <p>{{b}}</p>
+        <p>{{c}}</p>
+        <p>{{d}}</p>
+        <p>{{e}}</p>
     </div>
         
 </div>
 <br>
 <br>
 <div class="glavna">
-<table id="customers">
-    <tr>
+    <p id="a1">Zona 1</p>
+    <br>
+    
+    <br>
+    <br>
+    
+    
+    <ul id="a1">
         
-        <th>Naziv Parking Mjesta</th>
-        <th>Broj Slobodnih Mjesta</th>
+    {% for l in lista%}
         
+        <li>{{l.NazivMjesta}}</li>
+        <br>
 
-    </tr>
-    {% for results in lista %}
-    <tr>
-        <td>{{results.NazivMjesta}}</td>
-        <td>{{results.BrojMjesta}}</td>
-        
-    </tr>
     {% endfor %}
+        
+    </ul>
+    
+    
 
-</table>
+    
+    
+    <ul id="a2">
+        {% for l in suma %}
+        
+        <li>{{l}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    
+    
+</div>
+<br>
+<br>
+<div class="glavna">
+    <p id="a1">Zona 2</p>
+    <br>
+    
+    <br>
+    <br> 
+    
+    
+    <ul id="a1">
+        
+    {% for l in lista1 %}
+        
+        <li>{{l.NazivMjesta}}</li>
+        <br>
+
+    {% endfor %}
+        
+    </ul>
+    
+    
+
+    
+    
+    <ul id="a2">
+        {% for l in suma1 %}
+        
+        <li>{{l}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    
+    
+</div>
 </div>
     
 

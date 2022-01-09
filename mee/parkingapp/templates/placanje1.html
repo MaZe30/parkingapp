@@ -22,6 +22,17 @@
         
         
 </div>
+<br>
+{% if messages %}    
+  <div class="alert">
+      
+      {% for msg in messages %}
+          
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      {{msg}}
+      {% endfor %}
+      {% endif %}
+  </div>
     <br>
     <div class="glavna">
         <label class="zona11">ZA PLAČANJE PUTEM SMS-A UNESITE BROJ I SATNICU PARKINGA:</label>
@@ -44,12 +55,7 @@
             <button id="Pri" href="{% url 'sms' %}"type="submit">Dalje</button>
             <br>
     
-          {% if messages %}
-          {% for msg in messages %}
-          <br>
-          <mark>{{msg}}</mark>
-          {% endfor %}
-          {% endif %}
+         
         
     </div>
     

@@ -24,15 +24,26 @@
         
         
 </div>
-    <br>
+<br>
+{% if messages %}    
+  <div class="alert">
+      
+      {% for msg in messages %}
+          
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      {{msg}}
+      {% endfor %}
+      {% endif %}
+  </div>
+<br>
 
     <div class="glavna">
         <form method="POST" action="{% url 'me' %}">
             {% csrf_token %}
         <label class="zona11">Izaberite parkiralište za ZONU 1</label>
         <br>
-        <select name="zona1"  id="zona2">
-            <option  disabled="true" selected>Zona 1:</option>
+        <select name="zona1"  id="zona2" required>
+            <option  disabled="true" >Zona1</option>
             {% for results in lista %}
             <option >{{results.NazivMjesta}}</option>
             {% endfor %}

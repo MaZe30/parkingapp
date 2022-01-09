@@ -156,7 +156,7 @@ b{
   color: snow;
   font-size: 20px;
 }
-input {
+input ,select{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -165,4 +165,25 @@ input {
   background-color: #b4b224;
   color: white;
   font-size: 15px;
+}
+.alert {
+  padding: 20px;
+  background-color:black;
+  color: white;
+  
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }

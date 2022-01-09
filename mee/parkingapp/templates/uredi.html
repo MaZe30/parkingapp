@@ -24,62 +24,100 @@
 
 <br>
 <br>
+<br>
+<br>
 <div class="glavna">
+    <p id="a1">Zona 1</p>
+    <br>
+    
+    <br>
     <br>
     
     
-    <b>ZONA 1:</b>
-    <br>
-    <br>
-<table id="customers">
-    <tr>
+    <ul id="a1">
         
-        <th>Naziv Parking Mjesta</th>
-        <th>Broj Slobodnih Mjesta</th>
+    {% for l in lista%}
         
+        <li>{{l.NazivMjesta}}</li>
+        <br>
 
-    </tr>
-    {% for results in lista %}
-    <tr>
-        <td>{{results.NazivMjesta}}</td>
-        <td>{{results.BrojMjesta}}</td>
-        
-    </tr>
     {% endfor %}
+        
+    </ul>
+    
+    
 
-</table>
-<br>
-<b>ZONA 2:</b>
-<br>
-<br>
-<table id="customers">
-    <tr>
+    
+    
+    <ul id="a2">
+        {% for l in suma %}
         
-        <th>Naziv Parking Mjesta</th>
-        <th>Broj Slobodnih Mjesta</th>
+        <li>{{l}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    
+    
+</div>
+<br>
+<br>
+<div class="glavna">
+    <p id="a1">Zona 2</p>
+    <br>
+    
+    <br>
+    <br> 
+    
+    
+    <ul id="a1">
         
+    {% for l in lista1 %}
+        
+        <li>{{l.NazivMjesta}}</li>
+        <br>
 
-    </tr>
-    {% for results in lista1 %}
-    <tr>
-        <td>{{results.NazivMjesta}}</td>
-        <td>{{results.BrojMjesta}}</td>
-        
-    </tr>
     {% endfor %}
+        
+    </ul>
+    
+    
 
-</table>
+    
+    
+    <ul id="a2">
+        {% for l in suma1 %}
+        
+        <li>{{l}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    
+    
+</div>
+<br>
+<br>
+<div class="glavna">
 <form action="{% url 'uredi' %}"  method="POST">
     {% csrf_token %}
-    <label>Unesite naziv parkingaa koji želite da obrišete</label>
+    <label>Unesite naziv parkinga koji želite da uredite</label>
     <br>
     <br>
-    <input type="text" placeholder="Unesi zonu parkinga" name="zona" required>
+    <select name="zona">
+        <option>zona1</option>
+        <option>zona2</option>
+    </select>
     <br>
     <br>
 
-    <input type="text" placeholder="Unesite naziv parkinga" name="naziv" required>
-    <br>
+    <select name="naziv"  id="zona2">
+        <option  disabled="true" selected>Odaberite parking mjesto:</option>
+        {% for results in lista %}
+        <option >{{results.NazivMjesta}}</option>
+        {% endfor %}
+        {% for results in lista1 %}
+        <option >{{results.NazivMjesta}}</option>
+        {% endfor %}
+    </select>
     <br>
     <label>Unesite novi naziv i broj parking mjesta</label>
     <br>
@@ -88,7 +126,7 @@
     <br>
     <br>
 
-    <input type="text" placeholder="Unesite naziv parkinga" name="broj" required>
+    <input type="text" placeholder="Unesite broj mjesta" name="broj" required>
     <br>
     <br>
     

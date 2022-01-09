@@ -25,6 +25,17 @@
         
         
 </div>
+<br>
+{% if messages %}    
+  <div class="alert">
+      
+      {% for msg in messages %}
+          
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      {{msg}}
+      {% endfor %}
+      {% endif %}
+  </div>
     <br>
 
     <div class="glavna">    
@@ -35,6 +46,20 @@
           <br>
 
           <input type="text" placeholder="Unesite datum" name="Datum" required>(Format MM/DD/GG)
+          <br>
+          
+          
+          <select name="parking"  id="zona2">
+            <option  disabled="true" >Odaberite parking mjesto:</option>
+            {% for results in lista %}
+            <option >{{results.NazivMjesta}}</option>
+            {% endfor %}
+            {% for results in lista1 %}
+            <option >{{results.NazivMjesta}}</option>
+            {% endfor %}
+            <br>
+            <input type="text" placeholder="Unesite registraciju" name="registracija" required>
+            <br>
           <br>
           <input type="text" placeholder="Unesite satnicu" name="Satnica" required>
           <br>
@@ -51,12 +76,7 @@
              
           <br>
     
-          {% if messages %}
-          {% for msg in messages %}
-          <br>
-          <mark>{{msg}}</mark>
-          {% endfor %}
-          {% endif %}
+          
           </br>
           <br>
           <button href="{% url 'rezervacija' %}"  type="submit" id="Pri" name="Pri">Rezerviši</button>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load static %}
-        <link rel="stylesheet" href="{% static 'pregledpodatumu.css'%}">
+        <link rel="stylesheet" href="{% static 'listausera.css'%}">
 </head>
 <body>
     <div class="header">
@@ -23,38 +23,50 @@
 </div>
     </div>
     <br>
-    {% if messages %}
-      <div class="alert">
-        
-        {% for msg in messages %}
-            
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        {{msg}}
-        {% endfor %}
-        {% endif %}
-    </div>
-    <br>
+    {% if messages %}    
+    <div class="alert">
+    {% for msg in messages %}
+          
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      {{msg}}
+      {% endfor %}
+      {% endif %}
+      <br>
+      </div>
+      <br>
     <div class="glavna">
+        <h1 >Lista Admina</h1>
     
+    <table id="customers">
+        <tr>
+            <th>Id</th>
+           
+            <th>Email</th>
+            <th>Pwd</th>
+            
+
+        </tr>
+        {% for getdata in lista %}
+        <tr>
+            <td>{{getdata.id}}</td>
+            
+            <td>{{getdata.EmailAdmina}}</td>
+            <td>{{getdata.PwdAdmina}}</td>
+            
+        {% endfor %}
     
     </table>
+    <br>
     
-    <form action="{% url 'datum1' %}"  method="POST">
-        {% csrf_token %}
-        <label>Unesite datum:</label>
-        <br>
+    
 
-        <input  placeholder="Unesite datum" name="datum" required>(Format MM/DD/GG)
         <br>
     
-    <button href="{ url 'datum1' %}"  type="submit" id="Pri" name="Pri">Dalje</button>
-
-      <br>
-      
-
-  
-</form>
-</div>
-        
           
-             
+    
+    </div>
+    
+
+
+    
+</body>

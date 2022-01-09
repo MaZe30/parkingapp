@@ -60,7 +60,12 @@ urlpatterns = [
     path("obrisi1",views.obrisi1,name="obrisi1"),
     path("obrisi",views.obrisi,name="obrisii"),
     path("uredi1",views.uredi1,name="uredi1"),
-    path("uredi",views.uredi,name="uredi")
+    path("uredi",views.uredi,name="uredi"),
+    path("rezervacija12",views.rezervacija12,name="rezervacija12"),
+    path("adminpanel",views.adminpanel,name="adminp"),
+    path("listaadmina",views.listaadmina,name="listaadmina"),
+    path("urediadmina",views.urediadmina,name="urediadmina"),
+    path("adminedit",views.adminedit,name="adminedit")
     
     
 

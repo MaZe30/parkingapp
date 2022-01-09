@@ -23,6 +23,17 @@
 </div>
     </div>
     <br>
+    {% if messages %}
+      <div class="alert">
+        
+        {% for msg in messages %}
+            
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        {{msg}}
+        {% endfor %}
+        {% endif %}
+    </div>
+    <br>
     <div class="glavna">
     
         <table id="customers">
@@ -32,7 +43,7 @@
                 <th>Username</th>
                 <th>Registracija</th>
                 <th>Datum</th>
-                <th>Vrijeme</th>
+                <th>VrijemePrijave</th>
                 <th>Satnica</th>
     
             </tr>
@@ -43,7 +54,7 @@
                 <td>{{getdata.Username}}</td>
                 <td>{{getdata.Registracija}}</td>
                 <td>{{getdata.Datum}}</td>
-                <td>{{getdata.Vrijeme}}</td>
+                <td>{{getdata.VrijemePrijave}}</td>
                 <td>{{getdata.Satnica}}</td>
             </tr>
             {% endfor %}
@@ -51,12 +62,7 @@
         </table>
         <br>
         <br>
-        {% if messages %}
-        {% for msg in messages %}
-        <br>
-        <mark>{{msg}}</mark>
-        {% endfor %}
-        {% endif %}
+        
       
         
         

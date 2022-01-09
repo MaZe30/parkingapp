@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'listausera.css'%}">
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        
+        <img class="logo1" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <div class="header-right">
+            <a class="active" href="{% url 'pocetna1' %}" type="submit" name="back"  >Početna</a>
+            
+            
+            
+            <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+            <p name="jo">Admin</p>
+        
+    </div>
+</div>
+    </div>
+    {% if messages %}    
+  <div class="alert">
+      
+      {% for msg in messages %}
+          
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      {{msg}}
+      {% endfor %}
+      {% endif %}
+  </div>
+    <br>
+    <div class="glavna">
+    
+        <h1 >Lista Admina</h1>
+    
+        <table id="customers">
+            <tr>
+                <th>Id</th>
+               
+                <th>Email</th>
+                <th>Pwd</th>
+                
+    
+            </tr>
+            {% for getdata in lista %}
+            <tr>
+                <td>{{getdata.id}}</td>
+                
+                <td>{{getdata.EmailAdmina}}</td>
+                <td>{{getdata.PwdAdmina}}</td>
+                
+            {% endfor %}
+        
+        </table>
+    <br>
+    
+    <form action="{% url 'adminedit' %}"  method="POST">
+        {% csrf_token %}
+        <select name="operacija">
+            <option>Obriši</option>
+            <option>Dodaj</option>
+        </select>
+        <br>
+        <br>
+        
+        <input type="text" placeholder="Unesite email" name="Email" required>
+        <br>
+        <br>
+        <input type="text" placeholder="Unesite šifru" name="Pwd" required>
+        <br>
+        <br>
+        <input type="number" placeholder="Admin Key" name="Key" required>
+        <br>
+        <br>
+        
+        
+          
+             
+              
+             
+          
+           
+        
+        
+        <button href="{ url 'adminedit' %}"  type="submit" id="Pri" name="Pri">Dalje</button>
+
+        <br>
+    
+          
+          </form>
+    
+    </div>
+    
+
+
+    
+</body>

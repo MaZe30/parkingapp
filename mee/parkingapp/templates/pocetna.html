@@ -20,9 +20,19 @@
       
       <a href="{% url 'Reg' %}" type="submit" name="reg" id="reg" value="Registruj se">Registruj se</a>
     </div>
+  </div>
+  <br>
+     {% if messages %}    
+  <div class="alert">
+      
+      {% for msg in messages %}
           
-        
-</div>
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      {{msg}}
+      {% endfor %}
+      {% endif %}
+  </div>     
+
       <br>
       <div class="glavna">    
         <form action="{% url 'loginpage' %}" id="login" method="POST">
@@ -43,12 +53,7 @@
              
           <br>
     
-          {% if messages %}
-          {% for msg in messages %}
-          <br>
-          <mark>{{msg}}</mark>
-          {% endfor %}
-          {% endif %}
+          
           </br>
           <button href="{% url 'loginpage' %}"  type="submit" id="Pri" name="Pri">Prijavi se</button>
           <br>

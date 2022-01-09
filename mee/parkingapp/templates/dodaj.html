@@ -21,6 +21,17 @@
         
     </div>
 </div>
+<br>
+{% if messages %}
+      <div class="alert">
+        
+        {% for msg in messages %}
+            
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        {{msg}}
+        {% endfor %}
+        {% endif %}
+    </div>
     <br>
     <div class="glavna">
         <form action="{% url 'dodaj' %}" id="login" method="POST">
@@ -32,7 +43,10 @@
   
             <input type="text" placeholder="Unesi naziv parkinga" name="naziv" required>
             <br>
-            <input type="text" placeholder="Unesi zonu parkinga" name="zona" required>
+            <select name="zona">
+                <option>zona1</option>
+                <option>zona2</option>
+            </select>
             <br>
             <input type="number" placeholder="Unesi broj mjesta" name="broj" required>
               
@@ -43,12 +57,7 @@
                
             <br>
       
-            {% if messages %}
-            {% for msg in messages %}
-            <br>
-            <mark>{{msg}}</mark>
-            {% endfor %}
-            {% endif %}
+            
             </br>
             <button href="{% url 'dodaj' %}"  type="submit" id="Pri" name="Pri">Dodaj</button>
             <br>
