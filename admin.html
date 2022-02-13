@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'admin.css'%}"
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="navbar"> ONLINE PARKING SARAJEVO Javni Parkinzi  </a>
+        <img class="logo" src="{% static 'img/sglogo.jpg' %}" alt="My image">
+        <img class="logo" src="{% static 'img/parkinglogo.png' %}" alt="My image">
+        <a class="back" href="{% url 'pocetna' %}" type="submit" name="back"  >Početna</a>
+        <br>
+        
+        <br>
+        <a class="back" href="{% url 'odjava' %}" type="submit" name="back"  >Odjava</a>
+        <p name="jo">Admin</p>
+        <br>
+    </div>
+    <br>
+    <div class="glavna">
+        <form method="POST" >
+            {% csrf_token %}
+        <label class="zona111">Dobrodošli admine izaberite opciju:</label>
+        <br>
+        
+            
+            
+        
+        <a href="{% url 'listausera' %}">Lista usera</a>
+        <br>
+        <a href="{% url 'listaparkinga'%}">Lista parkinga</a>
+        <br>
+        <a href="{% url 'rezervisi1' %}" >Rezervišite parking</a>
+        
+        </form>
+    
+    
+    
+
+
+    
+</body>
